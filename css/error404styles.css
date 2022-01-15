@@ -1,0 +1,59 @@
+/*==== estilos del error 404 ==== */
+body {
+  background-image: linear-gradient(
+    to bottom,
+    #000000,
+    #180308,
+    #25070c,
+    #32070c,
+    #3f0409,
+    #4c030a,
+    #5a0108,
+    #670005,
+    #790007,
+    #8b0007,
+    #9d0006,
+    #af0303
+  );
+}
+
+.title-error {
+  font-family: monoton;
+  -webkit-animation: title-error 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: title-error 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes title-error {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(300px);
+    transform: translateZ(300px);
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(12px);
+    transform: translateZ(12px);
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes title-error {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(300px);
+    transform: translateZ(300px);
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(12px);
+    transform: translateZ(12px);
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
