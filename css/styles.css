@@ -1,1 +1,8 @@
-
+/*==== Estilos del footer ==== */
+.title-footer {
+  font-family: Monoton;
+}
+.opcion-footer:hover {
+  color: #e41313 !important;
+}
+/* ======================== */
