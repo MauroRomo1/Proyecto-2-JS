@@ -1,0 +1,40 @@
+.content-boton{
+    align-items: center;
+    justify-content: end;
+    display: grid;
+
+}
+.botonPeli {
+    border: 3px solid rgba(155, 0, 0, 1);
+    margin-bottom: 20px;
+    width: 200px;
+    font-family: monospace;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    background-size: 300%;
+}
+.botonPeli{
+    background-image: linear-gradient(to left,#FF3232, #FF1A1A , #FF0000);
+}
+.btn1:hover{
+    
+    color: black;
+    background-color: red;
+}
+body{
+    background-color: black;
+}
+#contenedorAdm {
+    color: white;
+}
+tr{
+    color: red;
+}
+th{
+    color: red;
+}
+textarea {
+    resize: none;
+}
