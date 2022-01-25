@@ -1,103 +1,92 @@
-// class Admin extends Usuario{
-// constructor(username,email, password,imagen,peliFavorita =false, )
-// super(username,email, password,imagen,peliFavorita =false)
-// }
-
 class Usuario {
-  constructor(
-    username,
-    email,
-    password,
-    imagen,
-    peliFavorita = false,
-    admin = false
-  ) {
+  constructor(nombre, username, email, password, imagen) {
+    this.nombre = nombre;
     this.username = username;
     this.email = email;
     this.password = password;
     this.imagen = imagen;
-    this.peliFavorita = peliFavorita;
-    this.admin = admin;
   }
 }
-let usuarios = [];
 
-let user1 = new Usuario(
-  "pgonzalez",
-  "pedritobueno@gmail.com",
-  "pp123456",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI3b7G544olENi0w5Nxr95EW3K3AB5a3t-mbaVh644XQIRNaRXJ2WqHAAHcJPQajU_jmo&usqp=CAU"
-);
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-const agregarUsuario = function () {
-  let email = document.querySelector("#").value;
-  let username = document.querySelector("#").value;
-  let password = document.querySelector("#").value;
-  let avatar = document.querySelector("#").value;
+// Llamamos al formulario apartir de su clase, que trae todo los input o nodos que hay en el
+let forms = document.querySelectorAll(".needs-validation");
 
-  //validar si el correo o el username ya existen
+//  esta parte sirve para comprovar que el usuario ingrese los datos y no deje los campos vacios
+Array.prototype.slice.call(forms).forEach(function (form) {
+  form.addEventListener("submit", function (event) {
+    if (!form.checkValidity()) {
+      event.preventDefault();
+      event.stopPropagation();
+    } else {
+      event.preventDefault();
+      agregarUsuarios();
+    }
+    form.classList.add("was-validated");
+  });
+});
+
+const agregarUsuarios = function () {
+  let email = document.querySelector("#validationCustom01").value;
+  let nombre = document.querySelector("#validationCustom02").value;
+  let username = document.querySelector("#validationCustom03").value;
+  let password = document.querySelector("#validationCustom04").value;
+  let avatar = document.querySelector("#validationCustom05").value;
+
+  // Validar si el correo o el username ya existen
   let validacion = validarUsuario(email, username);
-
   if (!validacion) {
-    usuarios.push(
-      new Usuario(username, email, password, avatar, peliFavorita, admin)
-    );
+    usuarios.push(new Usuario(nombre, username, email, password, avatar));
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
-    location.href = "#";
-    // location.replace("../index.html");
+    location.href = "../page/login.html";
   } else {
     alert(
-      "Usuario o correo electrónico ya existe, inicie sesión con sus datos"
+      "El usuario o correo electrónico ya existe, inicie sesión con sus datos."
     );
     location.reload();
   }
 };
 
-// Validar al usuario
+// Funcion que valida el usuario.
 const validarUsuario = function (correo, username) {
   let checkEmail = usuarios.find(function (user) {
     return user.email === correo;
   });
-
-  let checkUserName = usuarios.find(function (user) {
+  let checkUsername = usuarios.find(function (user) {
     return user.username === username;
   });
 
-  if (checkEmail || checkUserName) {
+  if (checkEmail || checkUsername) {
     return true;
   } else {
     return false;
   }
 };
 
-agregarUsuario(user1);
-
-//Validar los datos de logueo----------------------
+//==== Esta funcion es para validar los datos de logueo ====
 const validarDatos = function () {
-  let inputEmail = document.querySelector("#").value;
-  let inputPassword = document.querySelector("#").value;
+  let inputEmail = document.querySelector("#input_email").value;
+  let inputPassword = document.querySelector("#input_password").value;
 
   let validar_email = usuarios.find(function (usuario) {
     return usuario.email === inputEmail;
   });
 
-  //   console.log(validar_email);
   if (validar_email) {
     if (validar_email.password === inputPassword) {
-      console.log("Usuario encontrado");
+      console.log("usuario encontrado");
       let datos = {
         email: validar_email.email,
         username: validar_email.username,
-        avatar: validar_email.imagen,
       };
       localStorage.setItem("usuario", JSON.stringify(datos));
-
-      location.replace("#");
+      location.replace("/page/home.html");
     } else {
-      alert("Email o contraseña incorrecto");
+      alert("Email o contraseña incorrectos");
     }
   } else {
-    alert("Email o contraseña incorrecto");
+    alert("Email o contraseña incorrectos");
   }
 };
 

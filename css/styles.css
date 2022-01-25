@@ -1,5 +1,17 @@
+/* ==== Estilos del Navbar ==== */
+.title-navbar {
+  color: #e70634 !important;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-family: Monoton;
+  letter-spacing: 1px;
+}
+
+/* =========================== */
+
 /*==== Estilos del footer ==== */
 .title-footer {
+  letter-spacing: 1px;
   font-family: Monoton;
 }
 .opcion-footer:hover {
