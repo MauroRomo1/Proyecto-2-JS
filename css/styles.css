@@ -1,3 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(61, 2, 2);
+  background: linear-gradient(
+    0deg,
+    rgba(61, 2, 2, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
 /* ==== Estilos del Navbar ==== */
 .title-navbar {
   color: #e70634 !important;
@@ -9,12 +24,42 @@
 
 /* =========================== */
 
+/*==== Estilos del carousel de la pagina principal ==== */
+.img-carousel {
+  max-height: 90vh;
+  object-fit: cover;
+}
+
+.carousel-item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #000;
+  opacity: 0.7;
+}
+.title-carousel {
+  letter-spacing: 1px;
+  font-family: Monoton;
+  color: #e70634 !important;
+}
+/* =================================================== */
+
+/*===== Estilos de la parte de categorias de peliculas ===== */
+.card {
+  background: transparent;
+}
+/* =================================================== */
+
 /*==== Estilos del footer ==== */
 .title-footer {
   letter-spacing: 1px;
   font-family: Monoton;
 }
 .opcion-footer:hover {
-  color: #e41313 !important;
+  color: #e70634 !important;
 }
 /* ======================== */
