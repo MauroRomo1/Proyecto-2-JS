@@ -65,6 +65,21 @@ body {
   transform-origin: center;
   transition: all 0.3s ease-out;
 }
+.container-cpeliculas {
+  display: flex;
+  justify-content: space-around;
+}
+.container-cpeliculas img {
+  display: flex;
+  width: 180px;
+  height: 250px;
+  border-radius: 5px;
+}
+.container-cpeliculas img:hover {
+  transform: scale(1.2);
+  transform-origin: center;
+  transition: all 0.3s ease-out;
+}
 /* --------------------------- categorias------------------------- */
 .containter-categoria {
   display: grid;
@@ -91,17 +106,7 @@ body {
   scroll-behavior: smooth;
   flex-wrap: nowrap;
 }
-.containter-categoria .container-cpeliculas img {
-  display: flex;
-  width: 180px;
-  height: 250px;
-  border-radius: 5px;
-}
-.containter-categoria .container-cpeliculas img:hover {
-  transform: scale(1.2);
-  transform-origin: center;
-  transition: all 0.3s ease-out;
-}
+
 #pelicula {
   width: 190px;
   height: 260px;
