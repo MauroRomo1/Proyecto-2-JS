@@ -12,30 +12,53 @@
   </head>
   <body>
     <!-- INICIO DE NAVBAR -->
-    <header class="sticky-top" id="menu">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container justify-content-evenly">
-            <a class="navbar-brand" href="#"><b>Navbar de decoracion</b></a>
-            
-            <div>
-              
-            </div>
-            <div>
-              <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a
-                    class="nav-link active"
-                    aria-current="page"
-                    href="./home.html"
-                    
-                  >
-                  <i class="fa fa-hand-o-left fa-2x" aria-hidden="true"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
+    <header>
+      <!--==== navegacion de la pagina ==== -->
+      <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <div class="container">
+          <a
+            class="navbar-brantle-navbar title-navbar text-decoration-none"
+            href="#"
+            >MOVIES.HD</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Categorias</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Administracion</a>
+              </li>
+            </ul>
+            <!--==== Formulario de busqueda ==== -->
+            <form class="d-flex">
+              <input
+                class="form-control rounded-start"
+                type="search"
+                placeholder="Buscar pelicula..."
+                aria-label="Search"
+              />
+              <button class="btn btn-secondary rounded-end" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
           </div>
-        </nav>
+        </div>
+      </nav>
     </header>
       <!-- FIN DE NAVBAR -->
 
@@ -70,7 +93,8 @@
                    </tr>
                </thead>
                <tbody id="cuerpoTabla">
-                  
+                 <tr>
+                 </tr>
                </tbody>
               </table>
            </div>
@@ -78,7 +102,7 @@
    </div>
    <!-- FIN TABLA DE PELICULAS-->
 
-  <!-- INICIO DEL MODAL -->
+  <!-- INICIO DEL MODAL AGREGAR -->
  
   <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -88,38 +112,31 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="exampleInputCodigo" class="form-label">Codigo</label>
-              <input type="codigo" class="form-control" id="exampleInputCodigo">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputNombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="exampleInputNombre">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputDescripcion" class="form-label">Descripción</label>
-              <textarea type="text-center" class="form-control" id="exampleInputDescripcion"> </textarea>
-            </div>
-            <div class="mb-3">
-              <label>Categoria</label>
-                  <select class="form-select" id="avatar">
-                    <option>Seleccione su categoria</option>
-                    <option value="Terror">Terror</option>
-                    <option value="Acción">Acción</option>
-                    <option value="Drama">Drama</option>
-                    <option value="Suspenso">Suspenso</option>
-                    <option value="CienciaFiccion">Ciencia Ficción</option>
-                  </select>
-            </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck">Publicado</label>
-            </div>
-            <div>
-              <button type="submit" class="btn btn-dark">Close</button>
-              <button type="submit" class="btn btn-danger">Save changes</button>
-            </div>
+          <form id="formulario" onsubmit="CargarNuevaPelicula(event)">
+        
+          </form>
+           
+        </div>
+
+        
+
+      </div>
+    </div>
+  </div>
+  <!-- FIN DEL MODAL-->  
+
+  <!-- INICIO DEL MODAL EDITAR -->
+ 
+  <div class="modal fade" id="updateModalEditar" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateModalLabel"><i class="fa fa-film" aria-hidden="true"></i></i> Editar Pelicula</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formularioEditar" onsubmit="actualizarPelicula(event)">
+        
           </form>
            
         </div>
