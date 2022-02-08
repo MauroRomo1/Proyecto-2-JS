@@ -79,6 +79,7 @@ const validarDatos = function () {
       let datos = {
         email: validar_email.email,
         username: validar_email.username,
+        avatar: validar_email.imagen,
       };
       localStorage.setItem("usuario", JSON.stringify(datos));
       location.replace("/page/home.html");

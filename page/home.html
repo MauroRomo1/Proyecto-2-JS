@@ -52,11 +52,11 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Categorias</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link">Mi lista</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link">Administracion</a>
+              <li class="nav-item" id="linkCategoria"></li>
+              <li class="nav-item text-white">
+                <a href="#" class="nav-link active" id="userLink">
+                  <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+                </a>
               </li>
             </ul>
             <!--==== Formulario de busqueda ==== -->
@@ -446,6 +446,42 @@
       </div>
     </footer>
 
+    <!-- Modal del usuario -->
+    <div
+      class="modal fade"
+      id="modalUser"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Usuario logueado ✅
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="bodyModal"></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary">
+              <a
+                href="/page/login.html"
+                class="text-decoration-none text-white"
+              >
+                Cerrar sesión
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Script de font awesome ICON -->
     <script src="https://use.fontawesome.com/085fe3a535.js"></script>
 
@@ -456,5 +492,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- JS principal -->
+    <script src="/js/home.js"></script>
   </body>
 </html>
