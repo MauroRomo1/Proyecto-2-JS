@@ -1,7 +1,33 @@
 * {
-  margin: auto;
-  padding: auto;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+}
+body {
+  background: rgb(61, 2, 2);
+  background: linear-gradient(
+    0deg,
+    rgba(61, 2, 2, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+/* ==== Estilos del Navbar ==== */
+.title-navbar {
+  color: #e70634 !important;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-family: Monoton;
+  letter-spacing: 1px;
+}
+
+/* =============================*/
+
+.title-home {
+  color: #e70634 !important;
+  font-size: 1.8rem;
+  font-family: Monoton, cursive;
+  letter-spacing: 1px;
 }
 /* -------------------------carrousel-------------- */
 #carrousel .carousel-inner img {
@@ -21,9 +47,9 @@
 #carrousel {
   position: relative;
 }
-body {
+/* body {
   font-family: "Monoton", cursive;
-}
+} */
 /* ----------------------los mas vistos--------------------------------  */
 .container-principal {
   justify-content: space-between;
@@ -115,7 +141,7 @@ body {
   justify-content: center;
   border-radius: 5px;
 }
-.d-flex {
+.img-categoria {
   display: flex !important;
   justify-content: center;
   align-items: center;
@@ -152,3 +178,13 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 18px;
 }
+
+/*==== Estilos del footer ==== */
+.title-footer {
+  letter-spacing: 1px;
+  font-family: Monoton;
+}
+.opcion-footer:hover {
+  color: #e70634 !important;
+}
+/* ======================== */
