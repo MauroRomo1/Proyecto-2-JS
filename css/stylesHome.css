@@ -1,0 +1,154 @@
+* {
+  margin: auto;
+  padding: auto;
+  box-sizing: border-box;
+}
+/* -------------------------carrousel-------------- */
+#carrousel .carousel-inner img {
+  max-height: 60vh;
+  object-fit: cover;
+  background-size: cover;
+  margin-bottom: 50px;
+  display: flex;
+  margin-top: 20px;
+}
+#carrousel .carousel-inner p,
+#carrousel .carousel-inner h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+#carrousel {
+  position: relative;
+}
+body {
+  font-family: "Monoton", cursive;
+}
+/* ----------------------los mas vistos--------------------------------  */
+.container-principal {
+  justify-content: space-between;
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  flex-direction: column;
+}
+.container-principal h3 {
+  align-items: flex-start;
+}
+
+.container-principal .container-peliculas {
+  justify-content: space-evenly;
+  display: flex;
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  flex-wrap: nowrap;
+}
+.container-principal .container-peliculas .pelicula {
+  width: 190px;
+  height: 260px;
+  display: flex;
+  background-color: cornsilk;
+  justify-content: center;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.container-principal .container-peliculas .pelicula img {
+  display: flex;
+  width: 180px;
+  height: 250px;
+  border-radius: 5px;
+}
+.container-principal .container-peliculas .pelicula img:hover {
+  transform: scale(1.2);
+  transform-origin: center;
+  transition: all 0.3s ease-out;
+}
+.container-cpeliculas {
+  display: flex;
+  justify-content: space-around;
+}
+.container-cpeliculas img {
+  display: flex;
+  width: 180px;
+  height: 250px;
+  border-radius: 5px;
+}
+.container-cpeliculas img:hover {
+  transform: scale(1.2);
+  transform-origin: center;
+  transition: all 0.3s ease-out;
+}
+/* --------------------------- categorias------------------------- */
+.containter-categoria {
+  display: grid;
+  justify-content: baseline;
+  position: absolute;
+  padding: 20px 25px;
+}
+.containter-categoria .container-titulo {
+  text-align: left;
+}
+.containter-categoria .container-titulo h4 {
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.containter-categoria .container-titulo img {
+  width: 80px;
+  height: 80px;
+}
+
+.containter-categoria .container-cpeliculas {
+  display: flex;
+  width: 80%;
+  padding: 20px 20px;
+  scroll-behavior: smooth;
+  flex-wrap: nowrap;
+}
+
+#pelicula {
+  width: 190px;
+  height: 260px;
+  display: flex;
+  background-color: cornsilk;
+  justify-content: center;
+  border-radius: 5px;
+}
+.d-flex {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+/* --------------------------MODAL------------------------ */
+
+.modal-dialog .modal-content .modal-header {
+  color: white;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  justify-content: center;
+}
+.modal-dialog .modal-content .modal-body {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+.modal-dialog .modal-content .modal-footer {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+.modal-dialog .modal-content {
+  background-color: slateblue;
+  border-radius: 10px;
+}
+.modal-dialog .modal-content h4 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 18px;
+}
