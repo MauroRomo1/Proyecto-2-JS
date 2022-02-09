@@ -45,7 +45,7 @@ const modificarPelicula = function (indice) {
   let datos = `
     <div class="mb-3">
       <label for="exampleInputCodigo" class="form-label">Codigo</label>
-      <input type="codigo" placeholder="Escriba su codigo" class="form-control" id="exampleInputCodigoModificar" value=${peliculas[indice].codigo} required>
+      <input type="number"  class="form-control" id="exampleInputCodigoModificar" value=${peliculas[indice].codigo} required>
     </div>
     <div class="mb-3">
       <label for="exampleInputNombre" class="form-label">Nombre</label>
@@ -98,15 +98,15 @@ const agregarPelicula = function () {
   let datos = `
   <div class="mb-3">
   <label for="exampleInputCodigo" class="form-label">Codigo</label>
-  <input type="codigo" placeholder="Escriba su codigo" class="form-control" id="exampleInputCodigo"  required>
+  <input type="number" placeholder="Escriba el codigo" class="form-control" id="exampleInputCodigo"  required>
 </div>
 <div class="mb-3">
   <label for="exampleInputNombre" class="form-label">Nombre</label>
-  <input type="text" class="form-control" id="exampleInputNombre"  required>
+  <input type="text" class="form-control" placeholder="Escriba el nombre" id="exampleInputNombre"  required>
 </div>
 <div class="mb-3">
   <label for="exampleInputDescripcion" class="form-label">Descripción</label>
-  <textarea type="text-center" class="form-control" id="exampleInputDescripcion"  required> </textarea>
+  <textarea type="text" class="form-control" placeholder="Escriba la descripción" id="exampleInputDescripcion"required> </textarea>
 </div>
 <div class="mb-3">
   <label>Categoria</label>
