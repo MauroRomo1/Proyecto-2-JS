@@ -170,7 +170,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
 }
-.modal-dialog .modal-content {
+.modal-dialog .content-modal {
   background-color: slateblue;
   border-radius: 10px;
 }

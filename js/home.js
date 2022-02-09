@@ -34,8 +34,8 @@ let estructuraCard = `
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h3 class="card-title">${usuario.username}</h3>
-                    <p class="card-text">
+                    <h3 class="card-title text-black">${usuario.username}</h3>
+                    <p class="card-text text-muted">
                       ${usuario.email}
                     </p>
                   </div>
