@@ -1,15 +1,33 @@
-body {
-  background-color: rgb(213, 216, 216);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.container {
+
+body {
+  background: rgb(61, 2, 2);
+  background: linear-gradient(
+    0deg,
+    rgba(61, 2, 2, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+/* ==== Estilos del Navbar ==== */
+.title-navbar {
+  color: #e70634 !important;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-family: Monoton;
+  letter-spacing: 1px;
+}
+/* =========================== */
+
+/*==== Estilos de la card de registro ==== */
+.contenedor-registro {
   height: 100vh;
 }
 img {
   width: 100%;
-}
-
-.card {
-  padding: 30px;
 }
 
 .img-card {
@@ -18,3 +36,14 @@ img {
 a {
   text-decoration: none;
 }
+/* ======================================= */
+
+/*==== Estilos del footer ==== */
+.title-footer {
+  letter-spacing: 1px;
+  font-family: Monoton;
+}
+.opcion-footer:hover {
+  color: #e70634 !important;
+}
+/* ======================== */

@@ -39,7 +39,7 @@ const agregarUsuarios = function () {
   if (!validacion) {
     usuarios.push(new Usuario(nombre, username, email, password, avatar));
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
-    location.href = "../page/login.html";
+    location.href = "../index.html";
   } else {
     alert(
       "El usuario o correo electrónico ya existe, inicie sesión con sus datos."
@@ -82,7 +82,7 @@ const validarDatos = function () {
         avatar: validar_email.imagen,
       };
       localStorage.setItem("usuario", JSON.stringify(datos));
-      location.replace("/page/home.html");
+      location.replace("#");
     } else {
       alert("Email o contraseña incorrectos");
     }
