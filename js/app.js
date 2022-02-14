@@ -75,14 +75,13 @@ const validarDatos = function () {
 
   if (validar_email) {
     if (validar_email.password === inputPassword) {
-      console.log("usuario encontrado");
       let datos = {
         email: validar_email.email,
         username: validar_email.username,
         avatar: validar_email.imagen,
       };
       localStorage.setItem("usuario", JSON.stringify(datos));
-      location.replace("#");
+      location.replace("../page/home.html");
     } else {
       alert("Email o contraseña incorrectos");
     }
