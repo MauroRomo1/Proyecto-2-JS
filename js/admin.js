@@ -1,11 +1,18 @@
 class Pelicula {
-  constructor(codigo,nombre,descripcion,categoria,publicado=false,destacado = false){
-      this.codigo = codigo;
-      this.nombre = nombre;
-      this.descripcion = descripcion;
-      this.categoria = categoria;
-      this.publicado = publicado;
-      this.destacado = destacado;
+  constructor(
+    codigo,
+    nombre,
+    descripcion,
+    categoria,
+    publicado = false,
+    destacado = false
+  ) {
+    this.codigo = codigo;
+    this.nombre = nombre;
+    this.descripcion = descripcion;
+    this.categoria = categoria;
+    this.publicado = publicado;
+    this.destacado = destacado;
   }
 }
 let peliculas = JSON.parse(localStorage.getItem("peliculas")) || [];
@@ -20,28 +27,28 @@ let formEditar = document.querySelector("#formularioEditar");
 //habilito las funciones del modal
 let myModal = new bootstrap.Modal(document.getElementById("updateModal"));
 
-let myModalEditar = new bootstrap.Modal(document.getElementById("updateModalEditar"));
+let myModalEditar = new bootstrap.Modal(
+  document.getElementById("updateModalEditar")
+);
 
 let indiceUser = null;
 
-
-
-const abrirModalAgregar = function(){
+const abrirModalAgregar = function () {
   myModal.show();
   agregarPelicula();
-}
+};
 
-const abrirModalEditar = function(indice){
+const abrirModalEditar = function (indice) {
   myModalEditar.show();
-  modificarPelicula(indice)
-}
-document.querySelector("#botonAgregar").addEventListener("click",function(){
+  modificarPelicula(indice);
+};
+document.querySelector("#botonAgregar").addEventListener("click", function () {
   abrirModalAgregar();
 });
 
 //Funcion que crea la estructura de los datos en el modal
 const modificarPelicula = function (indice) {
-  indiceUser= indice;
+  indiceUser = indice;
   let datos = `
     <div class="mb-3">
       <label for="exampleInputCodigo" class="form-label">Codigo</label>
@@ -77,21 +84,30 @@ const modificarPelicula = function (indice) {
                             
     `;
 
-
   formEditar.innerHTML = datos;
 };
 
 // Funcion que modifica los datos de una pelicula
-const actualizarPelicula = function(){
-  peliculas[indiceUser].codigo = document.querySelector("#exampleInputCodigoModificar").value;
-  peliculas[indiceUser].nombre = document.querySelector("#exampleInputNombreModificar").value;
-  peliculas[indiceUser].descripcion = document.querySelector("#exampleInputDescripcionModificar").value;
-  peliculas[indiceUser].categoria = document.querySelector("#exampleInputCategoriaModificar").value;
-  peliculas[indiceUser].publicado = document.querySelector("#exampleCheck1Modificar").checked;
+const actualizarPelicula = function () {
+  peliculas[indiceUser].codigo = document.querySelector(
+    "#exampleInputCodigoModificar"
+  ).value;
+  peliculas[indiceUser].nombre = document.querySelector(
+    "#exampleInputNombreModificar"
+  ).value;
+  peliculas[indiceUser].descripcion = document.querySelector(
+    "#exampleInputDescripcionModificar"
+  ).value;
+  peliculas[indiceUser].categoria = document.querySelector(
+    "#exampleInputCategoriaModificar"
+  ).value;
+  peliculas[indiceUser].publicado = document.querySelector(
+    "#exampleCheck1Modificar"
+  ).checked;
   localStorage.setItem("peliculas", JSON.stringify(peliculas));
   myModalEditar.hide();
   cargarTabla();
-}
+};
 
 //Funcion que crea la estructura del modal Agregar
 const agregarPelicula = function () {
@@ -131,18 +147,14 @@ const agregarPelicula = function () {
                             
     `;
 
-
   form.innerHTML = datos;
 };
-
-
 
 //Crear cuerpo de la tabla
 const cargarTabla = function () {
   contenidoTabla.innerHTML = "";
-  
-  peliculas.map(function (user, index) {
 
+  peliculas.map(function (user, index) {
     let fila = document.createElement("tr");
 
     let estructura = `
@@ -156,11 +168,9 @@ const cargarTabla = function () {
             <i class="fa fa-trash-o fa-2x text-danger" aria-hidden="true" role="button" onclick="borrarUsuario(${index})"></i>
             <span class="estrella" onclick="destacar(${index})">
             ${
-              estrellaLlena(user) 
-              ? `<i class="fa fa-star fa-2x text-danger" aria-hidden="true"></i>`
-              :  `<i class="fa fa-star-o fa-2x text-danger" aria-hidden="true"></i>`
-               
-               
+              estrellaLlena(user)
+                ? `<i class="fa fa-star fa-2x text-danger" aria-hidden="true"></i>`
+                : `<i class="fa fa-star-o fa-2x text-danger" aria-hidden="true"></i>`
             }</span>
             </td>
         `;
@@ -170,16 +180,18 @@ const cargarTabla = function () {
   });
 };
 
-//Function destacar cuando hacemos click en la estrella 
+//Function destacar cuando hacemos click en la estrella
 const destacar = function (index) {
   console.log(peliculas);
   console.log(index);
 
-  if (peliculas[index].destacado === false){ // si no le dio click a la estrella vacia
+  if (peliculas[index].destacado === false) {
+    // si no le dio click a la estrella vacia
     console.log(peliculas[index].destacado);
-    
-    for (i=0; i < peliculas.length; i++) { // todo lo de destacado que este true (estrella llena) lo vuelve false
-      if (peliculas[i].destacado = true) {
+
+    for (i = 0; i < peliculas.length; i++) {
+      // todo lo de destacado que este true (estrella llena) lo vuelve false
+      if ((peliculas[i].destacado = true)) {
         peliculas[i].destacado = false;
         console.log(peliculas[i]);
       }
@@ -188,17 +200,13 @@ const destacar = function (index) {
   } else {
     peliculas[index].destacado = false;
   }
-  
-    
-  
+
   //guardar cambios en localstorage y recargar tarjetas
   localStorage.setItem("peliculas", JSON.stringify(peliculas));
   cargarTabla();
 };
-const estrellaLlena = function(user) {
-  if (user.destacado === true)
-  
-    return user; 
+const estrellaLlena = function (user) {
+  if (user.destacado === true) return user;
 };
 //Funcion que crea la estructura de los datos en el modal
 const CargarNuevaPelicula = function () {
@@ -210,29 +218,27 @@ const CargarNuevaPelicula = function () {
 
   //llamo a la función que valida email y username si ya existe
   let validar = validarPelicula(codigo);
-  
+
   if (!validar) {
-    peliculas.push(new Pelicula(codigo, nombre, descripcion, categoria,publicado));
+    peliculas.push(
+      new Pelicula(codigo, nombre, descripcion, categoria, publicado)
+    );
     localStorage.setItem("peliculas", JSON.stringify(peliculas));
-    
   } else {
     alert("La pelicula ingresada ya existe");
-
 
     location.reload();
   }
   myModal.hide();
   cargarTabla();
-}
-
-
+};
 
 //Validar si la pelicula  ya existe en el arreglo de peliculas
-const validarPelicula = function (codigo) { // uso el codigo ya que es unico
+const validarPelicula = function (codigo) {
+  // uso el codigo ya que es unico
   let checkCodigo = peliculas.find(function (usuario) {
     return usuario.codigo === codigo;
   });
-
 
   if (checkCodigo) {
     return true;
@@ -243,7 +249,9 @@ const validarPelicula = function (codigo) { // uso el codigo ya que es unico
 
 //Funcion que borra un usuario---------------------------------------------
 const borrarUsuario = function (indice) {
-  let validar = confirm(`Está seguro que quiere eliminar la pelicula con el codigo: ${peliculas[indice].codigo}?`);
+  let validar = confirm(
+    `Está seguro que quiere eliminar la pelicula con el codigo: ${peliculas[indice].codigo}?`
+  );
 
   if (validar) {
     peliculas.splice(indice, 1);
@@ -253,3 +261,58 @@ const borrarUsuario = function (indice) {
   }
 };
 cargarTabla();
+
+// ==== Funciones para actualizar el nav y motrar el modal ======= //
+let usuario = JSON.parse(localStorage.getItem("usuario")) || null;
+
+// ID del elemento LI del home.
+let linkCategoria = document.querySelector("#linkCategoria");
+
+// Para abrir el modal.
+let modalUsuario = new bootstrap.Modal(document.getElementById("modalUser"), {
+  keyboard: false,
+});
+
+// Funcion que actualiza el navbar si es que se logea un admin.
+const actualizarNav = function () {
+  if (usuario.email === "admin@gmail.com") {
+    linkCategoria.innerHTML = `<a class="nav-link" href="/page/admin.html">Administracion</a>`;
+  } else {
+    linkCategoria.innerHTML = `<a class="nav-link" href="#">Mi lista</a>`;
+  }
+};
+actualizarNav();
+
+// ID del body del modal.
+let modalBody = document.querySelector("#bodyModal");
+
+let estructuraCard = `
+<!-- Card del modal -->
+            <div class="card mb-3 border border-white" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="../img/${usuario.avatar}.png"
+                    class="img-fluid rounded-start"
+                    alt="..."
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h3 class="card-title text-black">${usuario.username}</h3>
+                    <p class="card-text text-muted">
+                      ${usuario.email}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!-- Card modal fin -->
+`;
+modalBody.innerHTML = estructuraCard;
+// Evento del modal
+document.querySelector("#userLink").addEventListener("click", function () {
+  modalUsuario.show();
+});
+
+// =============================================================== //
