@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- Fav icon de la web -->
+     <link rel="shortcut icon" href="/img/fav-icon.png" />
+     <!-- Import Monoton font  -->
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link
+       href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+       rel="stylesheet"
+     />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/stylesAdmin.css">
+    <title>Pagina de Administración</title>
+  </head>
+  <body>
+    <!-- INICIO DE NAVBAR -->
+    <header>
+      <!--==== navegacion de la pagina ==== -->
+      <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <div class="container">
+          <a
+            class="navbar-brantle-navbar title-navbar text-decoration-none"
+            href="#"
+            >MOVIES.HD</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/page/home.html"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#titulo">Categorias</a>
+              </li>
+              <li class="nav-item" id="linkCategoria"></li>
+              <li class="nav-item text-white">
+                <a href="#" class="nav-link active" id="userLink">
+                  <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+            <!--==== Formulario de busqueda ==== -->
+            <form class="d-flex">
+              <input
+                class="form-control rounded-start"
+                type="search"
+                placeholder="Buscar pelicula..."
+                aria-label="Search"
+              />
+              <button class="btn btn-secondary rounded-end" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+      <!-- FIN DE NAVBAR -->
+      <main>
+              <!-- INICIO TABLA DE PELICULAS-->
+    <div class="container">
+      <div id="contenedorAdm">
+       <div class="row mt-5">
+           <div class="col text-center">
+            <h3>Panel de Administración</h3>
+           </div>
+       </div>
+       <div>
+          <div class="content-boton">
+            <button id="botonAgregar" class="btn1 botonPeli" type="button">Agregar Pelicula</button>
+          </div>
+        </div>
+      </div>
+    
+       <div class="row">
+           <div class="col-12 col-md-8 offset-md-2">
+            <table class="table table-hover">
+               <thead>
+                   <tr>
+                       <th>Codigo</th>
+                       <th>Pelicula</th>
+                       <th>Categoria</th>
+                       <th>Descripción</th>
+                       <th>Publicado</th>
+                       <th>Acciones</th>
+                   </tr>
+               </thead>
+               <tbody id="cuerpoTabla">
+                 <tr>
+                 </tr>
+               </tbody>
+              </table>
+           </div>
+       </div>
+   </div>
+  </div>
+   <!-- FIN TABLA DE PELICULAS-->
+      </main>
+
+
+   <footer class="bg-dark text-white">
+    <div class="container text-center text-md-left">
+      <div class="row text-center text-md-left">
+        <!-- SOBRE NOSOTROS -->
+
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5
+            class="text-uppercase mb-4 font-weight-bold text-danger title-footer"
+          >
+            Sobre nosotros
+          </h5>
+          <p>
+            moviesHD es un servicio por suscripción de pago, su contenido está
+            sujeto a la disponibilidad.
+          </p>
+        </div>
+
+        <!-- Mas informacion -->
+
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h5
+            class="text-uppercase mb-4 font-weight-bold text-danger title-footer"
+          >
+            Informacion
+          </h5>
+          <p>
+            <a href="#" class="text-white text-decoration-none opcion-footer"
+              >Suscripción</a
+            >
+          </p>
+          <p>
+            <a href="#" class="text-white text-decoration-none opcion-footer">
+              Cookies</a
+            >
+          </p>
+          <p>
+            <a href="#" class="text-white text-decoration-none opcion-footer"
+              >Preguntas frecuentes</a
+            >
+          </p>
+        </div>
+
+        <!-- CONTACTO -->
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5
+            class="text-uppercase mb-4 font-weight-bold text-danger title-footer"
+          >
+            Contacto
+          </h5>
+          <a href="#" class="text-white text-decoration-none opcion-footer">
+            <p>
+              <i class="fa fa-info-circle" aria-hidden="true"></i> Centro de
+              ayuda
+            </p>
+          </a>
+          <p>
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            moviesHD@gmail.com
+          </p>
+          <p><i class="fa fa-phone" aria-hidden="true"></i> +54 3812278406</p>
+        </div>
+      </div>
+
+      <!-- SEGUNDA LÍNEA  -->
+
+      <hr class="mb-4" />
+
+      <!-- COPYRIGHT -->
+
+      <div class="row align-items-center">
+        <div class="col-md-7 col-lg-8">
+          <p>
+            &copy; <strong class="text-danger title-footer">Movies.hd</strong>
+            2022. Todos los derechos reservados.
+          </p>
+        </div>
+
+        <!-- REDES SOCIALES -->
+
+        <div class="col-md-5 col-lg-4">
+          <div class="text-center text-md-right">
+            <ul class="list-unstyled list-inline">
+              <li class="list-inline-item">
+                <a href="#" class="text-info" target="_black"
+                  ><i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
+                </a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="#" target="_black" class="text-primary"
+                  ><i
+                    class="fa fa-facebook-official fa-lg"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="#" class="text-danger" target="_black"
+                  ><i class="fa fa-instagram fa-lg" aria-hidden="true"></i>
+                </a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="#" class="text-danger" target="_black"
+                  ><i class="fa fa-youtube-play fa-lg" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- INICIO DEL MODAL AGREGAR -->
+ 
+  <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateModalLabel"><i class="fa fa-film" aria-hidden="true"></i></i> Agregar Pelicula</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formulario" onsubmit="CargarNuevaPelicula(event)">
+        
+          </form>
+           
+        </div>
+
+        
+
+      </div>
+    </div>
+  </div>
+  <!-- FIN DEL MODAL-->  
+
+  <!-- INICIO DEL MODAL EDITAR -->
+ 
+  <div class="modal fade" id="updateModalEditar" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateModalLabel"><i class="fa fa-film" aria-hidden="true"></i></i> Editar Pelicula</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formularioEditar" onsubmit="actualizarPelicula(event)">
+        
+          </form>
+           
+        </div>
+
+        
+
+      </div>
+    </div>
+  </div>
+  <!-- FIN DEL MODAL-->
+  
+   <!-- Modal del usuario -->
+   <div
+   class="modal fade"
+   id="modalUser"
+   tabindex="-1"
+   aria-labelledby="exampleModalLabel"
+   aria-hidden="true"
+ >
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title text-black" id="exampleModalLabel">
+           Usuario logueado ✅
+         </h5>
+         <button
+           type="button"
+           class="btn-close"
+           data-bs-dismiss="modal"
+           aria-label="Close"
+         ></button>
+       </div>
+       <div class="modal-body" id="bodyModal"></div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary">
+           <a href="../index.html" class="text-decoration-none text-white">
+             Cerrar sesión
+           </a>
+         </button>
+       </div>
+     </div>
+   </div>
+ </div>
+
+  
+  <!-- Script de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    <!-- Script de iconos de fontAewosme -->
+    <script src="https://use.fontawesome.com/c2813ccf5b.js"></script>
+
+    <!-- Script principal -->
+    <script src="../js/admin.js"></script>
+  </body>
+</html>
