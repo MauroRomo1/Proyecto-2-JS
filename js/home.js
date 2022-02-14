@@ -11,7 +11,7 @@ let myModal = new bootstrap.Modal(document.getElementById("modalUser"), {
 // Funcion que actualiza el navbar si es que se logea un admin.
 const actualizarNav = function () {
   if (usuario.email === "admin@gmail.com") {
-    linkCategoria.innerHTML = `<a class="nav-link" href="/page/admin.html">Administracion</a>`;
+    linkCategoria.innerHTML = `<a class="nav-link" href="../page/admin.html">Administracion</a>`;
   } else {
     linkCategoria.innerHTML = `<a class="nav-link" href="#">Mi lista</a>`;
   }
